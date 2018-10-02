@@ -1,34 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{ siteName }}</title>
+{% extends "_layout" %}
 
-  {% if getenv('ENVIRONMENT') != 'dev' and getenv('ENVIRONMENT') != 'local' %}
-    <link rel="stylesheet" href="{{ rev('app.css') }}">
-  {% endif %}
-</head>
+{% block content %}
 
-<body>
-  <div id="app">
-    {% set info = {
-      craftVersion: craft.app.getVersion(),
-      environment: getenv('ENVIRONMENT')
-    } %}
-    
-    <hello-world :info="{{ info|json_encode }}">
-      {{ getenv('DB_DATABASE') }}
-    </hello-world>
-  </div>
+<div class="hero">
+  <div class="hero__image" style="background-image: url('{{ entry.homeCarousel.one().url() }}')"></div>
+</div>
 
-  {% if getenv('ENVIRONMENT') == 'dev' or getenv('ENVIRONMENT') == 'local' %}
-    <script src="http://localhost:8080/app.js"></script>
-  {% else %}
-    <script src="{{ rev('chunk-vendors.js') }}"></script>
-    <script src="{{ rev('app.js') }}"></script>
-  {% endif %}
+<ul class="features">
+  {% for product in entry.productGrid %}
 
-</body>
-</html>
+  <li class="feature" style="background-image: url('{{ product.productPicture.one().url() }}')">
+    <p>{{ product.productName }}</p>
+    <div class="feature__blend">
+    </div>
+  </li>
+
+  {% endfor %}
+</ul>
+
+{% endblock %}

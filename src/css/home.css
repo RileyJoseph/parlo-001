@@ -1,0 +1,43 @@
+.hero{
+  &__image{
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+  }
+  margin-bottom: 4em;
+}
+
+.features{
+  list-style: none;
+  text-align: center;
+  margin: auto;
+  padding-left: 0px;
+}
+
+.feature{
+  display: inline-block;
+  width: 25%;
+  height: 400px;
+  margin: 2%;
+  background-size: cover;
+  p{
+    display: none;
+    position: absolute;
+  }
+}
+
+.feature__blend{
+  width: 100%;
+  height: 100%;
+}
+
+.feature:hover .feature__blend{
+  opacity: .5;
+  p{
+    display: inherit;
+  }
+}

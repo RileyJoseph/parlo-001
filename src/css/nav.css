@@ -1,0 +1,19 @@
+.nav{
+  ul{
+    list-style: none;
+    text-align: center;
+    li{
+      display: inline-block;
+      margin-right: 4em;
+      font-weight: lighter;
+      font-size: 18px;
+    }
+    li:hover{
+      text-decoration: underline;
+    }
+    li a{
+       color: black;
+       text-decoration: none;
+    } 
+  }
+}
