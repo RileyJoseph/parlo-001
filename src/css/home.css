@@ -2,31 +2,61 @@
   &__image{
     width: 100%;
     max-width: 1200px;
-    height: 500px;
+    height: 300px;
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
     background-position: center;
+    text-align: center;
   }
   margin-bottom: 4em;
 }
 
-.features{
-  list-style: none;
+.parlo-logo{
+  background-image: url('parlo-uniform-w.svg');
+  display: block;
+  width: 400px;
+  height: 400px;
+  background-repeat: no-repeat;
   text-align: center;
   margin: auto;
+  transform: translateY(100px);
+  background-size: contain;
+}
+
+.features{
+  height: 400px;
+  list-style: none;
+  text-align: center;
+  margin: auto 10px;
   padding-left: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row-wrap;
 }
 
 .feature{
   display: inline-block;
-  width: 25%;
+  width: 23%;
   height: 400px;
-  margin: 2%;
+  list-style: none;
+  margin: .15%;
+  text-align: center;
+  position: relative;
+  float: left;
+  flex-grow: 4;
   background-size: cover;
+  background-repeat: no-repeat;  
   p{
-    display: none;
-    position: absolute;
+    line-height: 1.5em;
+    background-color: white;
+    color: black;
+    width: 75%;
+    transition: opacity .25s;
+    margin-top: 50%;
+    padding: 10px 15px;
+    opacity: 0;
+    display: inline-block;
   }
 }
 
@@ -35,9 +65,8 @@
   height: 100%;
 }
 
-.feature:hover .feature__blend{
-  opacity: .5;
+.feature:hover{
   p{
-    display: inherit;
+    opacity: .8;
   }
 }

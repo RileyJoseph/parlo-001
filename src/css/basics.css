@@ -1,3 +1,7 @@
 h1, h2, h3, h4, p, a, li{
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
 }
+
+body{
+    margin: 0px;
+}
