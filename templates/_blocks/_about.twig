@@ -1,0 +1,22 @@
+<div class="about">
+    {% set transform = craft.imager.transformImage(entry.mainImage.one.url(), {'mode': 'crop','jpegQuality': 90,'interlace': true, 'position': entry.mainImage.one().getFocalPoint() })%}
+    {% set x = entry.mainImage.one().focalPoint() | first * 100 ~ '%' %}
+    {% set y = entry.mainImage.one().focalPoint() | last * 100 ~ '%' %}
+
+
+  <div class="about__image" style="background-image: url('{{ transform }}'); background-position: {{ x }} {{ y }};">
+  </div>
+  <div class="text">
+    {% for block in entry.textBlock %}
+      <div class="loop{{ loop.index }}">
+        <h1>{{ block.sectionTitle | upper }}</h1>
+        <!-- <h3>LIVING</h3> -->
+        <!-- <span>______</span> -->
+        {{ block.sectionBody }}    
+      </div>
+    {% endfor %}
+    {% if entry.slug == "contact" %}
+      {{ dolphiqForm('contact') }}
+    {% endif %}
+  </div>
+</div>

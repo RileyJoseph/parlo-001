@@ -2,26 +2,35 @@
 
 {% block content %}
 
-<div class="hero">
-  <div class="hero__image" style="background-image: url('{{ entry.homeCarousel.one().url() }}')">
-    <!-- <span class="parlo-logo"></span> -->
-  </div>
-</div>
-
-<div class="features">
-  {% for product in entry.productGrid %}
-
-  {% set transform = craft.imager.transformImage(product.productPicture.one.url(), {'mode': 'crop','jpegQuality': 90,'interlace': true, 'position': product.productPicture.one().getFocalPoint() })%}
-  {% set x = product.productPicture.one().focalPoint() | first * 100 ~ '%' %}
-  {% set y = product.productPicture.one().focalPoint() | last * 100 ~ '%' %}
-
-  <div class="feature" style="background-image: url('{{ transform }}'); background-position: {{ x }} {{ y }};">
-    <p>{{ product.productName }}</p>
-    <div class="feature__blend">
+  <div class="hero">
+    <div class="hero__image" style="background-image: url('{{ entry.homeCarousel.one().url() }}')">
+      <!-- <span class="parlo-logo"></span> -->
     </div>
   </div>
+  <div class="features">
+    {% for product in entry.productGrid %}
+    {% set transform = craft.imager.transformImage(product.productPicture.one.url(), {'mode': 'crop','jpegQuality': 90,'interlace': true, 'position': product.productPicture.one().getFocalPoint() })%}
+    {% set x = product.productPicture.one().focalPoint() | first * 100 ~ '%' %}
+    {% set y = product.productPicture.one().focalPoint() | last * 100 ~ '%' %}
 
-  {% endfor %}
-</div>
+      <div class="feature" style="background-image: url('{{ transform }}'); background-position: {{ x }} {{ y }};">
+        <p>{{ product.productName }}</p>
+<!--       <div class="feature__blend">
+    </div> -->
+      </div>
+
+    {% endfor %}
+  </div>
+
+  <div class="text home-text">
+    {% for block in entry.textBlock %}
+      <div class="loop{{ loop.index }}">
+        <h1>{{ block.sectionTitle }}</h1>
+        <!-- <h3>LIVING</h3> -->
+        <span>______________</span>
+        {{ block.sectionBody }}    
+      </div>
+    {% endfor %}
+  </div>
 
 {% endblock %}

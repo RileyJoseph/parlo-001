@@ -1,0 +1,35 @@
+
+{% set transform = craft.imager.transformImage(defaults.hero.one.url(), {'mode': 'crop','jpegQuality': 90,'interlace': true, 'position': defaults.hero.one().getFocalPoint() })%}
+{% set x = defaults.hero.one().focalPoint() | first * 100 ~ '%' %}
+{% set y = defaults.hero.one().focalPoint() | last * 100 ~ '%' %}
+
+<div class="hero">
+  <div class="hero__image" style="background-image: url('{{ transform }}'); background-size: cover; background-position: {{ x }} {{ y }}; background-size: cover;">
+    <!-- <span class="parlo-logo"></span> -->
+  </div>
+</div>
+
+<div class="item"> 
+    {% set transform = craft.imager.transformImage(entry.productImage.one.url(), {'mode': 'crop','jpegQuality': 90,'interlace': true, 'position': entry.productImage.one().getFocalPoint() })%}
+    {% set x = entry.productImage.one().focalPoint() | first * 100 ~ '%' %}
+    {% set y = entry.productImage.one().focalPoint() | last * 100 ~ '%' %}
+    <a href="/shop">&#171 Back to shop</a><br><br>
+    <div class="item__image" style="background-image:url('{{ transform }}'); background-position: {{ x }} {{ y }};">
+    </div>
+    <div class="text">
+    <h1>{{ entry.title }}</h1>
+    <div class="item__description">
+        <p>{{ entry.itemDescription }}</p>
+        <a href="#" class="button buy">Add To Cart</a>
+    </div>
+    </div>
+    {% if entry.gallery %}
+    <div class="item__gallery">
+        <p>More Photos</p>
+        {% for picture in entry.gallery %}
+            <div class="item__gallery--image" style="background-image:url('{{ picture.url }}');">
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>

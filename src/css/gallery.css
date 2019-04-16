@@ -1,0 +1,62 @@
+.header {
+    text-align: center;
+    padding: 32px;
+}
+.row {
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE 10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+    width: 90%;
+    margin: 0px 6%;
+    height: auto;
+    div{
+        display: inline-block;
+        background-size: cover;
+        width:40%;
+        height: 100%;
+        margin: 20px 10px;
+    }
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+    -ms-flex: 50%; /* IE 10 */
+    flex: 1 1 20%;
+    padding: 0 4px;
+    img{
+        width: 100%;
+        filter: grayscale(100%);
+    }
+    img:hover{
+        z-index: 9999;
+        filter: grayscale(0%);
+        transform: scale(1.009);
+        transition: ease all .6s;
+    }
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Style the buttons */
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: #666;
+    color: white;
+}

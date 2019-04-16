@@ -1,0 +1,54 @@
+.text{
+    margin-top: 80px;
+    margin-left: 6%;
+    margin-bottom: 80px;
+    h1{
+      font-size: 40px;
+      margin-bottom: 1em;
+      font-weight: 100;
+      color: #3c3e42;
+      border-top: none;
+      line-height: 1em;
+      font-family: proxima-nova-condensed, sans-serif;
+    }
+    h3{
+      font-size: 48px;
+      margin-bottom: 1em;
+      font-weight: light;
+      color: #76323F;
+      position: absolute;
+      transform: translateY(-80px) translateX(250px);
+    }
+    h1:after{
+      content: "____";
+      position: absolute;
+      display: block;
+      width: 100%;
+      transform: translateY(-20px);      
+    }
+    span{
+      font-size: 32px;
+      color: #76323F;
+      display: none;
+    }
+    p:first-child{
+      margin-top: 20px;
+    }
+    p{
+        width: 60%;
+        line-height: 1.6em;
+        font-weight: 400;
+        color: black;
+        opacity: .6;
+    }
+    .loop2{
+        margin-right: 10%;
+        h2{
+            text-align: right;
+        }
+        p{
+            text-align: right;
+            width: 100%;
+        }
+    }
+}

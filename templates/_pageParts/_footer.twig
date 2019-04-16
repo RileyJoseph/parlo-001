@@ -1,7 +1,21 @@
-<footer>
-<h3>Contact</h3>
-<p>{{ footer.phone }}</p>
-<p>{{ footer.email }}</p>
-<p>{{ footer.address }}</p>
+<footer class="footer">
+
+    <div class="contact">
+        <p style="font-weight:bold;">{{ footer.companyName }}</p>
+        <p>{{ footer.email }}</p>
+        <p>{{ footer.address | nl2br }}</p>
+        <!-- <p>{{ footer.phone }}</p> -->
+    </div>
+
+    <div class="footer__center">
+        <div style="background-image: url('{{ footer.footerLogo.one.url() }} ');">
+        </div>
+    </div>
+
+    <div class="footer__right">
+        <a class="facebook"></a>
+        <a class="twitter"></a>
+        <a class="instagram"></a>
+    </div>
 
 </footer>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53118a5ac48ef2c8d25804ac0893136f",
+    "content-hash": "fe7cb8792c272a923ab8fa68e14518f9",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -261,6 +261,48 @@
             ],
             "description": "A plugin to aid cache-busting in Craft 3",
             "time": "2018-07-20T13:17:13+00:00"
+        },
+        {
+            "name": "components/jquery",
+            "version": "3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "459648cda77875519c5da3ae1dd0ed5d170aa649"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/459648cda77875519c5da3ae1dd0ed5d170aa649",
+                "reference": "459648cda77875519c5da3ae1dd0ed5d170aa649",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery.slim.js",
+                        "jquery.slim.min.js",
+                        "jquery.slim.min.map"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JS Foundation and other contributors"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2018-03-04T13:23:48+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -923,6 +965,67 @@
                 "parser"
             ],
             "time": "2014-09-09T13:34:57+00:00"
+        },
+        {
+            "name": "dolphiq/craft3-forms",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Dolphiq/craft3-forms.git",
+                "reference": "b56ca4a4d8bb2b851bdc2669671a08529ea1cd92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Dolphiq/craft3-forms/zipball/b56ca4a4d8bb2b851bdc2669671a08529ea1cd92",
+                "reference": "b56ca4a4d8bb2b851bdc2669671a08529ea1cd92",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-beta.20"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "dolphiq-craft3-forms",
+                "name": "Forms",
+                "description": "Craft form plugin that will let you use forms as you would when using the Yii 2 Framework",
+                "schemaVersion": "1.0.0",
+                "developer": "Dolphiq",
+                "developerUrl": "https://dolphiq.nl/",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "documentationUrl": "https://github.com/Dolphiq/craft3-forms/blob/master/README.md",
+                "changelogUrl": "https://raw.githubusercontent.com/Dolphiq/craft3-forms/master/CHANGELOG.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "plugins\\dolphiq\\form\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dolphiq",
+                    "email": "info@dolphiq.nl",
+                    "homepage": "https://dolphiq.nl/"
+                }
+            ],
+            "description": "Craft 3 formulieren",
+            "keywords": [
+                "Craft",
+                "Forms",
+                "cms",
+                "craft-plugin",
+                "craft3",
+                "craftcms",
+                "form",
+                "plugin",
+                "yii",
+                "yii2"
+            ],
+            "time": "2018-08-06T07:15:46+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -2824,6 +2927,35 @@
                 "phra"
             ],
             "time": "2015-10-13T18:44:15+00:00"
+        },
+        {
+            "name": "soerenkroell/composer-slick",
+            "version": "1.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kroell/composer-slick.git",
+                "reference": "d66587b85aff3d004ca5caf7ce7d605f72f2ae39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kroell/composer-slick/zipball/d66587b85aff3d004ca5caf7ce7d605f72f2ae39",
+                "reference": "d66587b85aff3d004ca5caf7ce7d605f72f2ae39",
+                "shasum": ""
+            },
+            "type": "component",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ken Wheeler",
+                    "email": "ken_wheeler@me.com"
+                }
+            ],
+            "description": "A composer package for the last carousel you'll ever need",
+            "homepage": "https://github.com/kenwheeler/slick",
+            "time": "2015-07-03T17:24:43+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",

@@ -1,0 +1,26 @@
+{% extends '_layout' %}
+
+{% block content %}
+
+  {% if entry.hero %}
+    {% include '/_blocks/_hero' %}
+  {% endif %}
+
+    
+  {% if entry.galleryTwo %}
+    {% include '/_blocks/_gallery' %}
+  {% endif %}
+
+  {% if entry.type == "shop" %}
+    {% include '/_blocks/_shop' %}
+  {% endif %}
+
+  {% if entry.type == "item" %}
+    {% include '/_blocks/_item' %}
+  {% endif %}
+
+  {% if entry.type == "about" %}
+    {% include '/_blocks/_about' %}
+  {% endif %}
+
+{% endblock %}

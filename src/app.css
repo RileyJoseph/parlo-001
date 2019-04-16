@@ -1,17 +1,23 @@
 @charset "UTF-8";
 
 /*@import 'normalize.css';*/
+@import './css/about.css';
 @import './css/basics.css';
 @import './css/footer.css';
+@import './css/gallery.css';
+@import './css/general.css';
 @import './css/home.css';
 @import './css/nav.css';
+@import './css/shop.css';
+@import './css/textBlock.css';
+@import "hamburgers/dist/hamburgers";
 
 :root {
 
 
- --red: #C40C18;
- --dark-red: #B42C35;
- --light-grey: #D8D8D8;
+ --grey: #99978f;
+ --dark-grey: #565347;
+ --brown: #231f20;
  --grey: #7A6C64;
 
 }

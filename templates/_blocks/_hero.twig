@@ -1,0 +1,11 @@
+{% set transform = craft.imager.transformImage(entry.hero.one.url(), {'mode': 'crop','jpegQuality': 90,'interlace': true, 'position': entry.hero.one().getFocalPoint() })%}
+{% set x = entry.hero.one().focalPoint() | first * 100 ~ '%' %}
+{% set y = entry.hero.one().focalPoint() | last * 100 ~ '%' %}
+
+
+<div class="hero">
+<h1>{{ entry.title}}</h1>
+  <div class="hero__image" style="background-image: url('{{ transform }}'); background-size: cover; background-position: {{ x }} {{ y }};">
+    <!-- <span class="parlo-logo"></span> -->
+  </div>
+</div>

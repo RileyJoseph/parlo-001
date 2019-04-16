@@ -14,23 +14,42 @@
   {# <link rel="stylesheet" href="{{ rev('app.css') }}"> #}
   {% endif %}
   <link rel="stylesheet" href="{{ rev('app.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/kfm3kmm.css">
+
   {# <link rel="stylesheet" href="/static_assets/js/canvi/dist/canvi.css"> #}
 </head>
 
 <body>
   <main id="main">
     <nav id="nav" class="nav">
-      <ul>
-        <li><a href="#main" title="">Home</a></li>
-        <li><a href="#Work" title="">Work</a></li>
+      <button id="hamburger" class="hamburger hamburger--collapse" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <div id="overlay" class="overlay">
+        <ul>
+        <li><a href="/" title="">Home</a></li>
+        <li><a href="/work" title="">Work</a></li>
+        <li><a href="/shop" title="">Shop</a></li>
+        <li><a href="/About" title="">About</a></li>
+        <li><a href="/Contact" title="">Contact</a></li>  
+        </ul>
+        <div style="background-image: url('{{ footer.footerLogo.one.url() }} ');"></div>
+      </div>
+      <ul class="nav--desktop">
+        <li><a href="/" title="">Home</a></li>
+        <li><a href="/work" title="">Work</a></li>
         <li><a href="/shop" title="">Shop</a></li>
         <li><a href="/About" title="">About</a></li>
         <li><a href="/Contact" title="">Contact</a></li>        
       </ul>
     </nav>
-
-    {% block content %}
-    {% endblock %}
+    <div class="page">
+      {% block content %}
+      {% endblock %}
+    </div>
 
 
     {% include '_pageParts/_footer.twig' %}

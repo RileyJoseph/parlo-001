@@ -8,6 +8,8 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "hamburgers": "^1.1.3",
+    "tiny-slider": "^2.8.8",
     "vue": "^2.5.16"
   },
   "devDependencies": {
