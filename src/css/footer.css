@@ -1,4 +1,6 @@
 .footer{
+  max-width: 1350px;
+  margin: auto;
   position: relative;
   /*display: flex;*/
   margin-top: 4em;

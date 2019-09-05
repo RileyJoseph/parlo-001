@@ -13,16 +13,67 @@
   }
 }
 
+.shop-items{
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+.shop-item{
+  display: inline-block;  
+  height: 400px;
+  width: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 250px;
+  margin: 20px;
+}
+
 .store{
   width: 100%;
-  margin-top: 100px;
+  margin-top: 25px;
+  display: inline-block;
+  .tags{
+    text-align: left;
+    margin: auto;
+    width: 40%;
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 50px;
+    h3{
+      font-weight: lighter;
+    }
+  }
+  .tag{
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin: 5px 10px 5px 0px;
+    line-height: 3em;
+  }
+  .clear{
+    background-color: lightgrey;
+  }
+  .tag:hover{
+    color: white;
+    background-color: black;
+    transition: ease .5s;
+  }
+  .active{
+    background-color: black;
+    color: white;
+  }
   &__info{
-    height: 500px;
+    /*height: 500px;*/
     width: 38%;
     position: relative;
     overflow: hidden;
     display: inline-block;
-    border-right: 2px solid gray;
+    /*border-right: 2px solid gray;*/
     padding: 10px 40px 10px 80px;
     p{
       line-height: 1.5em;
@@ -185,5 +236,62 @@
 }
 
 @media(max-width: 1050px){
+  .store .tags{
+    width: 50%;
+  }
+}
 
+@media(max-width: 850px){
+  .store{
+    &__info{
+      width: 100%;
+      p{
+        width: 80%;
+      }
+    }
+    .tags{
+      text-align: center;
+      margin: auto;
+      width: 100%;
+      padding: 0px 150px;
+    } 
+  }
+  .shop-items{
+    margin-top: 50px;
+  }
+  .shop-item{
+    height: 300px;
+    width: 200px;
+    margin: 10px;
+  }
+  .item{
+    &__image{
+      width: 40%;
+    }
+  }
+}
+
+@media(max-width: 650px){
+  .store{
+    .tags{
+      padding: 0px 20px;
+    }
+  }
+  .item{
+    &__image{
+      width: 100%;
+    }
+  }
+}
+
+@media(max-width: 500px){
+  .store{
+    .tags{
+      padding: 0px 10px;
+    }
+  }
+  .shop-item{
+    width: 300px;
+    height: 400px;
+  }
 }

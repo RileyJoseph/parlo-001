@@ -8,6 +8,7 @@
 @import './css/general.css';
 @import './css/home.css';
 @import './css/nav.css';
+@import './css/page.css';
 @import './css/shop.css';
 @import './css/textBlock.css';
 @import "hamburgers/dist/hamburgers";
