@@ -1,7 +1,7 @@
 .nav{
   &--desktop{
     list-style: none;
-    text-align: center;
+    text-align: right;
     li{
       display: inline-block;
       margin-right: 4em;

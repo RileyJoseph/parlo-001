@@ -22,10 +22,17 @@ body{
 
 .button{
     width: 150px;
-    padding: 10px 20px;
-    border: 2px solid black;
+    padding: 5px 15px;
+    border: 1px solid black;
     text-decoration: none;
     text-transform: uppercase;
+    transition: .7s;
+    letter-spacing: 1px;
+}
+
+.button:hover{
+  background-color: black;
+  color: white;
 }
 
 .page{

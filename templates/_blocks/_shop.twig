@@ -1,59 +1,44 @@
 
+{% set sort = craft.request.queryStringWithoutPath() %}
 {% set transform = craft.imager.transformImage(defaults.hero.one.url(), {'mode': 'crop','jpegQuality': 90,'interlace': true, 'position': defaults.hero.one().getFocalPoint() })%}
-{% set x = defaults.hero.one().focalPoint() | first * 100 ~ '%' %}
-{% set y = defaults.hero.one().focalPoint() | last * 100 ~ '%' %}
-
-<div class="hero">
-  <div class="hero__image" style="background-image: url('{{ transform }}'); background-size: cover; background-position: {{ x }} {{ y }}; background-size: cover;">
-    <!-- <span class="parlo-logo"></span> -->
-  </div>
-</div>
 
 <section class="store">
-  <div class="store__info">
-    {% for block in entry.textBlock %}
-        <h2>{{ block.sectionTitle | upper }}</h2>
-        <!-- <span>______________</span> -->
-        {{ block.sectionBody }}    
-        <br>
-        <p>Have a custom order request? <a href="/contact">Click here.</a></p>
-          <!-- <p>Filters:</p>
-        <form>
-          <div class="store__type">
-            <p>Indoor/Outdoor</p>
-            <select class="store__dropdown">
-              <option value=""></option>          
-              <option value="indoor">indoor</option>
-              <option value="outdoor">outdoor</option>
-            </select>
-            <p>Wood/Metal</p>
-            <select class="store__dropdown">
-              <option value=""></option>                    
-              <option value="wood">Wood</option>
-              <option value="metal">Metal</option>
-            </select>
-          </div>
-          <div class="store__tag">
-            <p>Type</p>
-            <select class="store__dropdown">
-              <option value=""></option>          
-              <option value="home">Home</option>
-              <option value="office">Office</option>
-              <option value="art">Art</option>
-              <option value="industrial">Industrial</option>
-              <option value="kitchen-dining">Kitchen-Dining</option>            
-            </select>
-            <button type="submit">Filter</button>
-          </div>
-        </form> -->
-    {% endfor %}
+  <div class="store--details"> 
+    <div class="store__info">
+      {% for block in entry.textBlock %}
+          <h2>{{ block.sectionTitle | upper }}</h2>
+          <!-- <span>______________</span> -->
+          {{ block.sectionBody }}    
+          <br>
+          <p>Have a custom order request? <a href="/contact">Click here.</a></p>
+      {% endfor %}
+    </div>
+    <div class="tags">
+      <h3>Filters:</h3>
+      {% for tag in craft.categories() %}
+          <a class="tag {% if tag == sort %}active{% endif %}" href="/shop?{{tag}}">{{ tag }}</a>
+      {% endfor %}
+      <br><a class="tag clear" href="/shop">Clear Filter</a>
+    </div>
   </div>
 
-  <div id="shop"> 
-    {% set gallery = craft.entries.section('pages').level(2) %}
-    {% for item in gallery %}
-      <a href="{{item.url}}" class="item--{{ loop.index }}" style="background-image:url('{{ item.gallery.one.url }}');">
+  <div id="shopxx" class="shop-items"> 
+    {% if sort | length %}
+      {% set galleryF = craft.entries.relatedTo(craft.categories.slug(sort)) %}    
+      {% if galleryF | length %}
+        {% for item in galleryF %}
+          <a href="{{item.url}}" class="shop-item item--{{ loop.index }}" style="background-image:url('{{ item.gallery.one.url }}');">
+        </a>
+        {% endfor %}
+      {% else %}
+        <h5>Oops, we're building these now!</h5>
+      {% endif %}
+    {% else %}
+      {% set gallery = craft.entries.section('pages').level(2) %}
+      {% for item in gallery %}
+        <a href="{{item.url}}" class="shop-item item--{{ loop.index }}" style="background-image:url('{{ item.gallery.one.url }}');">
       </a>
-    {% endfor %}
+      {% endfor %}
+    {% endif %}
   </div>
 </section>
