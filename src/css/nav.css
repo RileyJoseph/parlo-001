@@ -1,4 +1,25 @@
 .nav{
+  &--logo{
+    background-image: url('/uploads/parlo-letters-black.png');    
+    width: 100px;
+    height: 25px;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 20px;
+  }
+  &--logo-mobile{
+    background-image: url('/uploads/parlo-letters-black.png');    
+    width: 100px;
+    height: 25px;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    float: left;
+    margin-left: 40px;
+    margin-top: 50px;
+  }
   &--desktop{
     list-style: none;
     text-align: right;
