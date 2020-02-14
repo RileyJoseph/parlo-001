@@ -14,7 +14,7 @@
       {% endfor %}
     </div>
     <div class="tags">
-      <h3>Filters:</h3>
+      <h3>Select a Category:</h3>
       {% for tag in craft.categories() %}
           <a class="tag {% if tag == sort %}active{% endif %}" href="/shop?{{tag}}">{{ tag }}</a>
       {% endfor %}

@@ -45,8 +45,12 @@
     vertical-align: top;
     display: inline-block;
     margin-top: 50px;
+    font-size: 14px;
     h3{
       font-weight: lighter;
+    }
+    .clear{
+      /*float: left;*/
     }
   }
   .tag{

@@ -62,21 +62,30 @@
   form{
     width: 100%;
     label{
-      padding-bottom: 3px;
+      padding-bottom: 5px;
+      font-family: proxima-nova, sans-serif;      
     }
     input{
       width: 80%;
       height: 30px;
       margin-bottom: 10px;
       clear: both;
-      border: 1px solid #808080;
+      background-color: #ededf0;
       border-radius: 0px;
+      border: 0px;
+      opacity: .8;
+      margin-top: 5px;
+      padding-left: 8px;
     }
     textarea{
       width: 100%;
       height: 150px; 
       border: 1px solid #808080;
       border-radius: 5px;
+      margin-top: 5px;      
+    }
+    .help-block{
+      font-family: proxima-nova, sans-serif;            
     }
     .form-group{
       width: 100%;
