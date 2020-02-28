@@ -4,8 +4,8 @@
     {% set y = entry.mainImage.one().focalPoint() | last * 100 ~ '%' %}
 
 
-  <!-- <div class="about__image" style="background-image: url('{{ transform }}'); background-position: {{ x }} {{ y }};"> -->
-  <!-- </div> -->
+  <div class="about__image" style="background-image: url('{{ transform }}'); background-position: {{ x }} {{ y }};">
+  </div>
   <div class="text">
     {% for block in entry.textBlock %}
       <div class="loop{{ loop.index }}">

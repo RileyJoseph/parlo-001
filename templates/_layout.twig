@@ -14,6 +14,11 @@
   {# <link rel="stylesheet" href="{{ rev('app.css') }}"> #}
   {% endif %}
   <link rel="stylesheet" href="{{ rev('app.css') }}">
+  <link rel="stylesheet" href="/dist/app.d06ab38d.css">  
+  <link rel="stylesheet" href="/assets/app.css">  
+  <link rel="stylesheet" href="/assets/css/all.css">  
+
+
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/kfm3kmm.css">
 
@@ -58,12 +63,14 @@
     {% include '_pageParts/_footer.twig' %}
 
   </main>
+  <script src="/assets/main.js"></script>
 
   {% if not craft.app.config.general.devMode %}
     <link rel="stylesheet" href="{{ rev('app.css') }}">
   {% endif %}
   {% if craft.app.config.general.devMode %}
-  <script src="http://localhost:8081/app.js"></script>
+  <script src="/assets/main.js"></script>
+   <script src="http://localhost:8081/app.js"></script>  
   {% else %}
   <script src="{{ rev('manifest.js') }}"></script>
   <script src="{{ rev('vendor.js') }}"></script>
@@ -73,4 +80,17 @@
   {% endif %}
 
 </body>
+{% js %}
+function openNav(){
+    var nav = document.getElementById("hamburger");
+    var overlay = document.getElementById("overlay");
+    nav.addEventListener('click',function(){
+        console.log("click!")
+        nav.classList.toggle("is-active");
+        overlay.classList.toggle("show-overlay");
+    })
+}
+window.onload = openNav();
+
+{% endjs %}
 </html>

@@ -6,15 +6,14 @@
   <div class="store--details"> 
     <div class="store__info">
       {% for block in entry.textBlock %}
-          <h2>{{ block.sectionTitle | upper }}</h2>
+          <!-- <h2>{{ block.sectionTitle | upper }}</h2> -->
           <!-- <span>______________</span> -->
           {{ block.sectionBody }}    
-          <br>
           <p>Have a custom order request? <a href="/contact">Click here.</a></p>
       {% endfor %}
     </div>
     <div class="tags">
-      <h3>Select a Category:</h3>
+      <h4>Select a Category to Filter:</h4>
       {% for tag in craft.categories() %}
           <a class="tag {% if tag == sort %}active{% endif %}" href="/shop?{{tag}}">{{ tag }}</a>
       {% endfor %}
@@ -22,13 +21,12 @@
     </div>
   </div>
 
-  <div id="shopxx" class="shop-items"> 
+  <div id="shop" class="shop-items"> 
     {% if sort | length %}
-      {% set galleryF = craft.entries.relatedTo(craft.categories.slug(sort)) %}    
-      {% if galleryF | length %}
-        {% for item in galleryF %}
-          <a href="{{item.url}}" class="shop-item item--{{ loop.index }}" style="background-image:url('{{ item.gallery.one.url }}');">
-        </a>
+      {% set gallery = craft.entries.relatedTo(craft.categories.slug(sort)) %}    
+      {% if gallery | length %}
+        {% for item in gallery %}
+          <a href="{{item.url}}" class="shop-item item--{{ loop.index }}" style="background-image:url('{{ item.gallery.one.url }}');"></a>
         {% endfor %}
       {% else %}
         <h5>Oops, we're building these now!</h5>
@@ -36,8 +34,7 @@
     {% else %}
       {% set gallery = craft.entries.section('pages').level(2) %}
       {% for item in gallery %}
-        <a href="{{item.url}}" class="shop-item item--{{ loop.index }}" style="background-image:url('{{ item.gallery.one.url }}');">
-      </a>
+        <a href="{{item.url}}" class="shop-item item--{{ loop.index }}" style="background-image:url('{{ item.gallery.one.url }}');"></a>
       {% endfor %}
     {% endif %}
   </div>

@@ -1,0 +1,17 @@
+button{
+  padding: 10px 25px;
+  letter-spacing: 1px;
+  font-family: proxima-nova, sans-serif;
+  font-style: uppercase;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: transparent;
+  text-align: center;
+  margin: auto;
+}
+
+button:hover{
+  opacity: .5;
+  cursor: pointer;
+}

@@ -13,7 +13,7 @@
     {% set transform = craft.imager.transformImage(entry.productImage.one.url(), {'mode': 'crop','jpegQuality': 90,'interlace': true, 'position': entry.productImage.one().getFocalPoint() })%}
     {% set x = entry.productImage.one().focalPoint() | first * 100 ~ '%' %}
     {% set y = entry.productImage.one().focalPoint() | last * 100 ~ '%' %}
-    <a href="/shop">&#171 Back to shop</a><br><br>
+    <a class="back-to-shop" href="/shop">BACK TO SHOP</a><br><br>
     <div class="item__image" style="background-image:url('{{ transform }}'); background-position: {{ x }} {{ y }};">
     </div>
     <div class="text">

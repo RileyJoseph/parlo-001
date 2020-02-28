@@ -2,7 +2,7 @@
 
     <div class="contact">
         <p style="font-weight:bold;">{{ footer.companyName }}</p>
-        <p>{{ footer.email }}</p>
+        <a href="mailto:{{footer.email}}">{{ footer.email }}</a>
         <p>{{ footer.address | nl2br }}</p>
         <!-- <p>{{ footer.phone }}</p> -->
     </div>
@@ -13,9 +13,9 @@
     </div>
 
     <div class="footer__right">
-        <a class="facebook"></a>
-        <a class="twitter"></a>
-        <a class="instagram"></a>
+        <a target="_blank" href="{{footer.facebook}}" class="facebook"></a>
+        <a target="_blank" href="{{footer.twitter}}" class="twitter"></a>
+        <a target="_blank" href="{{footer.instagram}}" class="instagram"></a>
     </div>
 
 </footer>
